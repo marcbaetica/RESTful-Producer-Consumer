@@ -20,4 +20,10 @@ FOLDER STRUCTURE:
 - routes.js //this is included in the server.js file (would separate if app was bigger and for production)
 
 
+CLI Instructions:
 
+make package.json with main:server and dependencies (express, mongoose, body-parser)
+
+$ npm install
+
+$ 
