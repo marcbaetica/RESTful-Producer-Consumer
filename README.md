@@ -26,4 +26,4 @@ make package.json with main:server and dependencies (express, mongoose, body-par
 
 $ npm install
 
-$ 
+$ sudo npm install -g nodemon      //to run app through nodemon instead of node
