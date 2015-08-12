@@ -28,4 +28,4 @@ app.use('/api', router);
 
 //starting the server
 app.listen(port);
-console.log('Magic is happening at http://localhost:' + port + '!');
+console.log('Magic is happening at http://localhost:' + port + '/api!');
