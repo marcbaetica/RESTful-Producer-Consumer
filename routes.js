@@ -1,4 +1,4 @@
-
+//this is the registered route
 
 var express = require('express');
 
