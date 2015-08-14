@@ -14,13 +14,15 @@ var message = 'Hello Worldah!'
 
 
 //routes for the API
-var router = express.Router();	//get an instance of the express Router
+//var router = express.Router();	//get an instance of the express Router
 
 //test route
-router.get('/', function(req, res){
-	//res.send(message);
-	res.json({ message: 'horray! welcome to our api!'});
-});
+//router.get('/', function(req, res){
+//	//res.send(message);
+//	res.json({ message: 'horray! welcome to our api!'});
+//});
+
+var router = require('./routes.js');
 
 //registering the ROUTES for the api prefix
 app.use('/api', router);
