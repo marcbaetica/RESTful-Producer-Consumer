@@ -1,4 +1,4 @@
-RESTful Producer Consumer App
+RESTful Producer-Consumer Apps
 
 Our API that will:
 
@@ -11,6 +11,7 @@ Log all requests to the console
 
 FOLDER STRUCTURE:
 
+serverAPI:
 - app/
 ----- models/
 ---------- superheroes.js  // our superheroes model
@@ -19,6 +20,17 @@ FOLDER STRUCTURE:
 - server.js         // configure our application and create routes
 - routes.js //this is included in the server.js file (would separate if app was bigger and for production)
 
+ClientConsumer:
+-
+
+
+DEPENDENCIES:
+
+API: express + body-parser + mongoose
+
+Consumer: angular (with ngResource and ngRoute modules)
+
+ 
 
 CLI Instructions:
 
