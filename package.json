@@ -1,9 +1,0 @@
-{
-  "name": "RESTful-Node-API",
-  "main": "server.js",
-  "dependencies": {
-    "body-parser": "~1.13.2",
-    "express": "~4.13.1",
-    "mongoose": "~4.1.1"
-  }
-}
