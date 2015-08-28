@@ -9,7 +9,6 @@ var db = mongoose.connect('mongodb://localhost/test', function (err) {
 var Schema = mongoose.Schema;
 var superheroSchema = new Schema({
 	name: String,
-	secretIdentity: String,
 	city: String
 });
 
