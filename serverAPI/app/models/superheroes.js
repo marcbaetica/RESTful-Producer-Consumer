@@ -1,6 +1,6 @@
 //dependencies and connections
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/test', function (err) {
+mongoose.connect('mongodb://localhost/test', function (err) {
 	if (err) throw err;
 	console.log('Connection to database established!');
 });

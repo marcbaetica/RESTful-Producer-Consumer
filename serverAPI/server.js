@@ -32,24 +32,15 @@ apiRouter.get('/superheroes', function (req, res){
 apiRouter.post('/superheroes', function (req, res) {  //url encode with parameters name and city as Strings
 	console.log('Creating a superhero with given POST parameters!');
 	
-	superhero.save(function (err, doc) {
-		if (err) throw err;
-		
-		res.json()
-
+	var dataToInsert = superhero({
+		name: req.body.name,
+		city: req.body.city
 	});
 
-
-
-	//var sup = new superhero();  //new instance of the superhero model
-	//superhero.name = req.body.name;  //set the superhero name (comes from request)
-	//superhero.city = req.body.city;
-	res.json({name:req.body.name});
-	//save and check for errors
-	/*superhero.save(function (err) {
-		if (err) res.send(err);
-		res.json({message: 'Superhero created!'});
-	});*/
+	dataToInsert.save(function (err, doc) {
+		if (err) throw err;
+		res.send('Superhero ' + req.body.name + ' has been added to the database!');
+	});
 });
 
 //middleware for s_id parameter routing
