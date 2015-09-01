@@ -51,7 +51,12 @@ apiRouter.param('s_id', function (req, res, next, id) {
 
 //routes for s_id parameter
 apiRouter.route('/superheroes/:s_id')
-	.get(function (req, res) {res.send('There was a GET request on superhero ' + req.params.s_id)})
+	.get(function (req, res) {
+		//res.send('There was a GET request on superhero ' + req.params.s_id)})
+		superhero.findById(req.params.s_id, function (err, doc) {
+			if (err) throw res.send(err);
+			res.json(doc);
+		})})
 	.put(function (req, res) {res.send('There was a PUT request on superhero ' + req.params.s_id)})
 	.delete(function (req, res) {res.send('There was a DELETE request on superhero ' + req.params.s_id)});
 
