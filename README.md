@@ -1,17 +1,19 @@
-RESTful Producer-Consumer Apps
+# RESTful Producer-Consumer Apps
 
-Our API that will:
+Our API will:
 
-Handle CRUD for an item (we’re going to use superheroes)
-Have a standard URL (http://example.com/api/superheroes and http://example.com/api/superheroes/:superhero_id)
-Use the proper HTTP verbs to make it RESTful (GET, POST, PUT, and DELETE)
-Return JSON data (since we are using node)
-Log all requests to the console
+- Handle CRUD for an item (we’re going to use superheroes)
+- Have a standard URL (http://example.com/api/superheroes and http://example.com/api/superheroes/:superhero_id)
+- Use the proper HTTP verbs to make it RESTful (GET, POST, PUT, and DELETE)
+- Return JSON data (since we are using node)
+- Log all requests to the console
 
+This API will in turn be consumed by a client GUI running AngularJS which will be provided or any other method the user wishes to entail (eg: POSTMAN, CURL, or their own browser application capable of consuming RESTful services)
 
-FOLDER STRUCTURE:
+# FOLDER STRUCTURE FOR:
 
 serverAPI:
+-
 - app/
 ----- models/
 ---------- superheroes.js  // our superheroes model
@@ -20,22 +22,16 @@ serverAPI:
 - server.js         // configure our application and create routes
 - routes.js //this is included in the server.js file (would separate if app was bigger and for production)
 
-ClientConsumer:
--
-
-
-DEPENDENCIES:
-
-API: express + body-parser + mongoose
-
-Consumer: angular (with ngResource and ngRoute modules)
-
- 
-
 CLI Instructions:
+- cd to directory of package.json file and run $ npm install
+- run with node '$ node server.js' (or optional to run app through nodemon instead of node '$ sudo npm install -g nodemon' and '$ nodemon server.js')
 
-make package.json with main:server and dependencies (express, mongoose, body-parser)
 
-$ npm install
+clientConsumer:
+-
+//to fill in here
 
-$ sudo npm install -g nodemon      //to run app through nodemon instead of node
+# DEPENDENCIES FOR:
+
+- API: express + body-parser + mongoose
+- Consumer: AngularJS (with ngResource and ngRoute modules)
