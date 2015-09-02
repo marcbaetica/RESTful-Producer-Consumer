@@ -56,9 +56,28 @@ apiRouter.route('/superheroes/:s_id')
 		superhero.findById(req.params.s_id, function (err, doc) {
 			if (err) throw res.send(err);
 			res.json(doc);
-		})})
-	.put(function (req, res) {res.send('There was a PUT request on superhero ' + req.params.s_id)})
-	.delete(function (req, res) {res.send('There was a DELETE request on superhero ' + req.params.s_id)});
+		})
+	})
+	.put(function (req, res) {
+		//res.send('There was a PUT request on superhero ' + req.params.s_id)
+		superhero.findById(req.params.s_id, function (err, doc) {
+			if (err) throw err;
+			//update the info and save the document in the db
+			doc.name = req.body.name;
+			doc.city = req.body.city;
+			doc.save(function (err) {
+				if (err) throw err;
+				res.json({message: 'Superhero info updated!'});
+			});
+		})
+	})
+	.delete(function (req, res) {
+		//res.send('There was a DELETE request on superhero ' + req.params.s_id)
+		superhero.remove({_id: req.params.s_id}, function (err, doc) {
+			if (err) throw err;
+			res.json({message: 'Superhero has been deleted!'});
+		});
+	});
 
 //set the routes on our app
 app.use('/api', apiRouter);
