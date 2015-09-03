@@ -12,7 +12,7 @@ This API will in turn be consumed by a client GUI running AngularJS which will b
 
 # FOLDER STRUCTURE FOR:
 
-serverAPI:
+serverAPI: (finished)
 -
 - app/
 ----- models/
@@ -27,7 +27,7 @@ CLI Instructions:
 - run with node '$ node server.js' (or optional to run app through nodemon instead of node '$ sudo npm install -g nodemon' and '$ nodemon server.js')
 
 
-clientConsumer:
+clientConsumer: (in progress)
 -
 //to fill in here
 
