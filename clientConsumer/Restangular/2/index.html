@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <!-- Example using Restangular -->
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+    <script src="http://code.angularjs.org/1.1.4/angular.js"></script>
+    <script src="http://code.angularjs.org/1.1.4/angular-resource.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script src="https://raw.github.com/mgonto/restangular/master/dist/restangular.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    
+    
+    <div ng-app="restangular-sample">
+      <div ng-controller="SampleCtrl" ng-cloak>
+        <h4>This is the name of the test venue with promise</h4>
+        <p>{{venue.name}}</p>
+        <h4>This is the name of the test venue without promise</h4>
+        <p>{{venueNoPromise.name}}</p>
+        <h4>Now show all of the names of the people who liked it</h4>
+        <p ng-repeat="like in likes">{{like.firstName}}</p>
+      </div>
+    </div>
+
+    
+  </body>
+
+</html>
