@@ -1,0 +1,10 @@
+{
+  "name": "restful_consumer",
+  "main": "index.html",
+  "dependencies" : {
+  	"angular" : "latest",
+  	"restangular" : "latest",
+  	"bootstrap" : "latest",
+  	"foundation" : "latest"
+  }
+}
