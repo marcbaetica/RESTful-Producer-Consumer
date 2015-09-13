@@ -29,6 +29,7 @@ CLI Instructions:
 
 clientConsumer: (in progress)
 -
+jjqquerry
 //to fill in here
 
 # DEPENDENCIES FOR:
