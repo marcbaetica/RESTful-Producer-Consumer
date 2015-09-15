@@ -10,13 +10,22 @@
 		<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
 		<script type="text/javascript" src="node_modules/restangular/dist/restangular.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="styling.css">
 		
-		<h4>This is our RESTful Superhero badass consumer app!</h4>
+		<h3 class="our-title">This is our RESTful Superhero badass consumer app!</h4>
 
-		<div ng-app>
+		<div class="input-section" ng-app>
 			Name: <input type="text" ng-model="input">
 			<br>
 			<h2>Hello {{input}} !</h2>
+		</div>
+
+		<div class="superhero-attributes">
+			Superhero: <input type="text">
+			<br>
+			City: <input type="text">
+			<br>
+			<input type="submit">
 		</div>
 		
 	</body>
