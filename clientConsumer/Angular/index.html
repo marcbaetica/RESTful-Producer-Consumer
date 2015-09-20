@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="shApp" ng-controller="mainController">
+
+	<head>
+		<title>Consuming the RESTful API</title>
+		
+		<!-- BOOTSTRAP -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<!-- JS files -->
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	
+	</head>
+	
+	<body>
+		<!-- <input type="text/plain" ng-model="inputTest">
+		<p>Hello {{inputTest}}</p> -->
+
+		<h1 class="mainTitle">RESTful API consumer App!</h1>
+
+		<div class="well">
+
+			<label>Method: </label>
+			<select class="form-control" ng-model="selectedMethod" ng-options="method.method as method.name for method in methods"></select>
+			<label>Name: </label>
+			<input type="text/plain" class="form-control" ng-model="name">
+			<label>City: </label>
+			<input type="text/plain" class="form-control" ng-model="city">
+			<br>
+			<input type="button" value="Submit" class="btn btn-info form-control">
+
+		</div>
+	</body>
+</html>
