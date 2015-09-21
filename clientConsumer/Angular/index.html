@@ -5,7 +5,8 @@
 		<title>Consuming the RESTful API</title>
 		
 		<!-- BOOTSTRAP -->
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/slate/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/custom.css">
 		<!-- JS files -->
 		<script type="text/javascript" src="js/angular.min.js"></script>
@@ -22,14 +23,44 @@
 		<div class="well">
 
 			<label>Method: </label>
-			<select class="form-control" ng-model="selectedMethod" ng-options="method.method as method.name for method in methods"></select>
-			<label>Name: </label>
-			<input type="text/plain" class="form-control" ng-model="name">
-			<label>City: </label>
-			<input type="text/plain" class="form-control" ng-model="city">
+			<select class="form-control" ng-change="showMethod()" ng-model="method" ng-options="method.method as method.name for method in methods" ng-change="showOnlyMethod()"></select>
+
+			<div class="get-method {{showGet}}">
+				<label>ID: </label>
+				<input type="text/plain" class="form-control" placeholder="Leave empty to get all objects from DB">    <!--if blank get all-->
+			</div>
+
+			<div class="post-method {{showPost}}">
+				<label>Name: </label>
+				<input type="text/plain" class="form-control" ng-model="name" placeholder="Superhero's name">
+				<label>City: </label>
+				<input type="text/plain" class="form-control" ng-model="city" placeholder="Superhero's city">
+			</div>
+
+			<div class="put-method {{showPut}}">
+				<label>ID: </label>
+				<input type="text/plain" class="form-control" placeholder="Superhero's ID">
+				<label>Name: </label>
+				<input type="text/plain" class="form-control" ng-model="name" placeholder="Superhero's name">
+				<label>City: </label>
+				<input type="text/plain" class="form-control" ng-model="city" placeholder="Superhero's city">
+			</div>
+
+			<div class="delete-method {{showDelete}}">
+				<label>ID: </label>
+				<input type="text/plain" class="form-control" placeholder="Supereho's ID">
+			</div>
+
 			<br>
 			<input type="button" value="Submit" class="btn btn-info form-control">
 
 		</div>
+		<p>ng-show list</p>
+		get <input type="text/plain" ng-model="showGet">
+		post <input type="text/plain" ng-model="showPost">
+		put <input type="text/plain" ng-model="showPut">
+		delete <input type="text/plain" ng-model="showDelete">
+
 	</body>
+
 </html>
