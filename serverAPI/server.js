@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var superhero = require('./app/models/superheroes');	//our model
 var apiRouter = express.Router();
 var bodyParser = require('body-parser');
-
+var path = require('path');		//when sending the path one up
 
 
 //ENVIROMENT AND BODY-PARSER CONFIG ================================================
@@ -85,7 +85,7 @@ app.use('/api', apiRouter);
 //our homepage
 app.get('/', function (req, res) {
 	console.log('The homepage has been requested!')
-	res.sendFile(__dirname + "/index.html");
+	res.sendFile(path.join(__dirname, "../clientConsumer/Angular/index.html"));
 });
 
 
