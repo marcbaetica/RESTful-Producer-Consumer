@@ -52,8 +52,6 @@ app.controller('mainController', function ($scope) {
 
 		//TODO: flush all input boxes
 
-
-
 		/*
 
 		$scope.data = whole response
@@ -64,6 +62,15 @@ app.controller('mainController', function ($scope) {
 			<p>id: '{{oneElement.id}}'</p>
 		*/
 
-	}
+	};
+
+	$scope.submit = function () {
+			//for testing purposes
+			$scope.dbResponse1 = {name: 'Batman', city: "Gotham", id: '54sd213czx32d1sa3cx'};
+			$scope.dbResponse2 = {name: 'Superman', city: "Metropolis", id: 'd5sa31235d2d1sa3cx'};
+			$scope.dbResponse3 = {name: 'The Flash', city: "Silver City", id: '3s5ad468f4as3d2s1a'};
+			$scope.data = [];
+			$scope.data.push(this.dbResponse1, this.dbResponse2, this.dbResponse3);
+	};
 
 });

@@ -54,7 +54,7 @@ apiRouter.route('/superheroes/:s_id')
 	.get(function (req, res) {
 		//res.send('There was a GET request on superhero ' + req.params.s_id)})
 		superhero.findById(req.params.s_id, function (err, doc) {
-			if (err) throw res.send(err);
+			if (err) throw err;
 			res.json(doc);
 		})
 	})

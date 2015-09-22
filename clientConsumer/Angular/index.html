@@ -20,7 +20,7 @@
 
 		<h1 class="mainTitle">RESTful API consumer App!</h1>
 
-		<div class="well">
+		<form class="well" ng-submit="submit()">
 
 			<label>Method: </label>
 			<select class="form-control" ng-change="showMethod()" ng-model="method" ng-options="method.method as method.name for method in methods" ng-change="showOnlyMethod()"></select>
@@ -52,9 +52,9 @@
 			</div>
 
 			<br>
-			<input type="button" value="Submit" class="btn btn-info form-control">
+			<input type="submit" value="Submit" class="btn btn-info form-control">
 
-		</div>
+		</form>
 		<p>ng-show list</p>
 		get <input type="text/plain" ng-model="showGet">
 		post <input type="text/plain" ng-model="showPost">
@@ -67,6 +67,7 @@
 		<br>
 		<div class="well post-info results">
 			<h2>Results: </h2>
+			<hr/>
 			<div ng-repeat="oneElement in data">
 				<p>name: '{{oneElement.name}}'</p>
 				<p>city: '{{oneElement.city}}'</p>
