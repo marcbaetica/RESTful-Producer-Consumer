@@ -20,14 +20,14 @@
 
 		<h1 class="mainTitle">RESTful API consumer App!</h1>
 
-		<div class="well">
+		<form class="well" ng-submit="submit()">
 
 			<label>Method: </label>
 			<select class="form-control" ng-change="showMethod()" ng-model="method" ng-options="method.method as method.name for method in methods" ng-change="showOnlyMethod()"></select>
 
 			<div class="get-method {{showGet}}">
 				<label>ID: </label>
-				<input type="text/plain" class="form-control" placeholder="Leave empty to get all objects from DB">    <!--if blank get all-->
+				<input type="text/plain" ng-model="getID" class="form-control" placeholder="Leave empty to get all objects from DB">    <!--if blank get all-->
 			</div>
 
 			<div class="post-method {{showPost}}">
@@ -52,9 +52,9 @@
 			</div>
 
 			<br>
-			<input type="button" value="Submit" class="btn btn-info form-control">
+			<input type="submit" value="Submit" class="btn btn-info form-control">
 
-		</div>
+		</form>
 		<p>ng-show list</p>
 		get <input type="text/plain" ng-model="showGet">
 		post <input type="text/plain" ng-model="showPost">
@@ -63,19 +63,19 @@
 
 		<hr/>
 		
+		<!-- PRINTING RESULTS ON SCREEN -->
 		<br>
 		<div class="well post-info results">
-			<p>name: 'Batman'</p>
-			<p>city: 'Gotham'</p>
-			<p>id: '321das351f3d1d3sa1fs'</p>
+			<h2>Results: </h2>
 			<hr/>
-			<p>name: 'Superman'</p>
-			<p>city: 'Metropolis'</p>
-			<p>id: '231gfd32h1fs231df32f'</p>
+			<h4 class="alert alert-{{type}}">{{response}}</h4>
 			<hr/>
-			<p>name: 'The Flash'</p>
-			<p>city: 'Silver City'</p>
-			<p>id: 'a2hlf35gsa123gds32sd'</p>
+			<div ng-repeat="oneElement in data">
+				<p>name: '{{oneElement.name}}'</p>
+				<p>city: '{{oneElement.city}}'</p>
+				<p>id: '{{oneElement._id}}'</p>
+				<hr/>
+			</div>
 		</div>
 
 	</body>

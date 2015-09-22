@@ -13,7 +13,7 @@ app.set('port', process.env.PORT || 8000);
 app.set('dest', 'localhost');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
+app.use();
 
 
 //ROUTES ===========================================================================
@@ -85,7 +85,7 @@ app.use('/api', apiRouter);
 //our homepage
 app.get('/', function (req, res) {
 	console.log('The homepage has been requested!')
-	res.sendFile(path.join(__dirname, "../clientConsumer/Angular/index.html"));
+	res.sendFile('index.html', {root: path.join(__dirname, "../clientConsumer/Angular")});
 });
 
 

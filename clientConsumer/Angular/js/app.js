@@ -1,7 +1,7 @@
 
 var app = angular.module("shApp", []);
 
-app.controller('mainController', function ($scope) {
+app.controller('mainController', ['$scope', '$http', function ($scope, $http) {   //Passing $http service to controller as string so that will resolve at runtime.
 
 	$scope.method = 'get';
 
@@ -50,25 +50,53 @@ app.controller('mainController', function ($scope) {
 			
 		};
 
-		//TODO: flush all input boxes
+		//TO DO: flush all input boxes
 
 
 	};
 
 	$scope.submit = function () {
+			
+			var statusResponse;	//for status message after request is processed
+			
+			//IF GET
+			if ($scope.method = 'get') {
+				//GET all or GET one -> info pushed into $scope.data
+				if ($scope.getID === undefined) {	//get all
+					$http.get('http://localhost:8000/api/superheroes').then(
+						function (data) {
+							//console.log(data);
+							statusResponse = 1;	///////////////TO DO!!!
+							$scope.data = data.data;
+							console.log('Returned data was:');
+							console.log($scope.data);
+						}, function (response) {
+							statusResponse = 2;	///////////////TO DO!!!
+						}
+					);
+				} else {	//get one (with specified ID)
+					$http.get('http://localhost:8000/api/superheroes/' + $scope.getID).then(
+						function (data) {
+							//console.log(data);
+							statusResponse = 1;	///////////////TO DO!!!
+							$scope.data = []; //defining as empty aray and pushing individual object to avoid ng-repeat break
+							$scope.data.push(data.data);
+							console.log('Returned data was:');
+							console.log($scope.data);
+						}, function (response) {
+							statusResponse = 4;	///////////////TO DO!!!
+						}
+					);
+				};
+			};
 
-			//for testing purposes GET all or GET one
-			//info pushed into $scope.data
-			$scope.dbResponse1 = {name: 'Batman', city: "Gotham", id: '54sd213czx32d1sa3cx'};
-			$scope.dbResponse2 = {name: 'Superman', city: "Metropolis", id: 'd5sa31235d2d1sa3cx'};
-			$scope.dbResponse3 = {name: 'The Flash', city: "Silver City", id: '3s5ad468f4as3d2s1a'};
-			$scope.data = [];
-			$scope.data.push(this.dbResponse1, this.dbResponse2, this.dbResponse3);
+
+			//if POST
+			//POST one
+			
+
+
 			//response code
-
-
-			//for testing purposes POST one
-			//tesponse code
 
 
 			//for testing purposes PUT one
@@ -79,8 +107,8 @@ app.controller('mainController', function ($scope) {
 			//response code
 
 
-			value = 3; //status = OK.
-			switch (value) {
+			//value = 1; //status = OK.
+			switch (statusResponse) {
 				case 1:
 					$scope.response = "Status: OK.";
 					$scope.type = "success";
@@ -90,11 +118,15 @@ app.controller('mainController', function ($scope) {
 					$scope.type = "danger";
 					break;
 				case 3:
-					$scope.response = "Status: Error. Please fill out all the values in the from before submitting.";
+					$scope.response = "Status: Error. Please fill out all the form values before submitting.";
+					$scope.type = "danger";
+					break;
+				case 4:
+					$scope.response = "Status: Error. Please fill form with an accurate ID field and resubmit.";
 					$scope.type = "danger";
 					break;
 			};
 
 	};
 
-});
+}]);

@@ -27,7 +27,7 @@
 
 			<div class="get-method {{showGet}}">
 				<label>ID: </label>
-				<input type="text/plain" class="form-control" placeholder="Leave empty to get all objects from DB">    <!--if blank get all-->
+				<input type="text/plain" ng-model="getID" class="form-control" placeholder="Leave empty to get all objects from DB">    <!--if blank get all-->
 			</div>
 
 			<div class="post-method {{showPost}}">
@@ -68,12 +68,12 @@
 		<div class="well post-info results">
 			<h2>Results: </h2>
 			<hr/>
-			<h4 class="alert alert-dismissible alert-{{type}}">{{response}}</h4>
+			<h4 class="alert alert-{{type}}">{{response}}</h4>
 			<hr/>
 			<div ng-repeat="oneElement in data">
 				<p>name: '{{oneElement.name}}'</p>
 				<p>city: '{{oneElement.city}}'</p>
-				<p>id: '{{oneElement.id}}'</p>
+				<p>id: '{{oneElement._id}}'</p>
 				<hr/>
 			</div>
 		</div>
