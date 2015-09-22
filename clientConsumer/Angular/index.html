@@ -63,19 +63,16 @@
 
 		<hr/>
 		
+		<!-- PRINTING RESULTS ON SCREEN -->
 		<br>
 		<div class="well post-info results">
-			<p>name: 'Batman'</p>
-			<p>city: 'Gotham'</p>
-			<p>id: '321das351f3d1d3sa1fs'</p>
-			<hr/>
-			<p>name: 'Superman'</p>
-			<p>city: 'Metropolis'</p>
-			<p>id: '231gfd32h1fs231df32f'</p>
-			<hr/>
-			<p>name: 'The Flash'</p>
-			<p>city: 'Silver City'</p>
-			<p>id: 'a2hlf35gsa123gds32sd'</p>
+			<h2>Results: </h2>
+			<div ng-repeat="oneElement in data">
+				<p>name: '{{oneElement.name}}'</p>
+				<p>city: '{{oneElement.city}}'</p>
+				<p>id: '{{oneElement.id}}'</p>
+				<hr/>
+			</div>
 		</div>
 
 	</body>

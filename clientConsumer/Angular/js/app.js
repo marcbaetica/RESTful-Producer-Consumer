@@ -52,6 +52,18 @@ app.controller('mainController', function ($scope) {
 
 		//TODO: flush all input boxes
 
+
+
+		/*
+
+		$scope.data = whole response
+		
+			<div class="well post-info results" ng-repeat="oneElement as data">
+			<p>name: '{{oneElement.name}}'</p>
+			<p>city: '{{oneElement.city}}'</p>
+			<p>id: '{{oneElement.id}}'</p>
+		*/
+
 	}
 
 });
