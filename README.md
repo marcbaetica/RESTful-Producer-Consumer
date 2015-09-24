@@ -48,6 +48,14 @@ This is the final version of the project merging both the client application and
 To do: Will create a final .sh script for linux to automatically start up both MongoDB and the server.
 
 
+Current Bugs:
+
+critical:
+1) FIX ADDED ON GET SOMETIMES -> $$hashKey: "object:95"
+non-critical:
+1) FLUSH INPUTS WITH FUNCTION EVERY TIME METHOD IS CHANGED 
+2) FIX ADDED ON GET SOMETIMES -> $$hashKey: "object:95"
+
 Run instructions:
 - run through index.html and make sure js/app.js has the proper MongoDB collection url. 
 NOTE: currently only the GET functionality is working.
