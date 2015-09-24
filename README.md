@@ -54,7 +54,9 @@ critical:
 1) FIX ADDED ON GET SOMETIMES -> $$hashKey: "object:95"
 non-critical:
 1) FLUSH INPUTS WITH FUNCTION EVERY TIME METHOD IS CHANGED 
-2) FIX ADDED ON GET SOMETIMES -> $$hashKey: "object:95"
+2) "Error: [ngRepeat:dupes] http://errors.angularjs.org/... when using POST
+3) Use of getPreventDefault() is deprecated.  Use defaultPrevented instead. (SOMETIMES)
+4) ALERT NOTIFICATIONS FIX AND MAKE ANOTHER DIFFERENCE BETWEEN CASE 3 AND CASE 4 NOTIFICATIONS
 
 Run instructions:
 - run through index.html and make sure js/app.js has the proper MongoDB collection url. 
