@@ -29,10 +29,30 @@ CLI Instructions:
 
 clientConsumer: (in progress)
 -
-jjqquerry
-//to fill in here
+AngularJS client (still in progress)
+- Angular/
+----- css/
+---------- bootstrap.min.css   	//bootstrap framework
+---------- custom.css	       	//custom CSS
+----- js/
+---------- angular.min.js	//angular framework
+---------- app.js		//angular module and controller
+----- index.html		//the homepage
+- JQuery/     		//independent work in progress
+- Restangular/       	//independent work in progress
+
+
+Final-MEAN-App: (in progress)
+-
+This is the final version of the project merging both the client application and the server. The client app is hosted by the server on its homepage while RESTful calls are being initiated and handled. Running is the same as the CLI instruction for the server (described above)
+To do: Will create a final .sh script for linux to automatically start up both MongoDB and the server.
+
+
+Run instructions:
+- run through index.html and make sure js/app.js has the proper MongoDB collection url. 
+NOTE: currently only the GET functionality is working.
 
 # DEPENDENCIES FOR:
 
 - API: express + body-parser + mongoose
-- Consumer: AngularJS (with ngResource and ngRoute modules)
+- Consumer: AngularJS + Bootstrap + bootswatch(Slate) + (optionally to be added are the ngResource and ngRoute modules or RestangularJS)
