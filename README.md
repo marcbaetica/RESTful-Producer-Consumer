@@ -10,11 +10,13 @@ Our API will:
 
 This API will in turn be consumed by a client GUI running AngularJS which will be provided or any other method the user wishes to entail (eg: POSTMAN, CURL, or their own browser application capable of consuming RESTful services)
 
-# FOLDER STRUCTURE FOR:
+# FOLDER STRUCTURE:
+
 
 serverAPI: (finished)
 -
-- app/
+- app/						//location of MongoDB model (built through MongooseJS)
+							//files for the client app (can be deployed separately instead of being hosted by the server)
 ----- models/
 ---------- superheroes.js  // our superheroes model
 - node_modules/     // created by npm. holds our dependencies/packages
@@ -22,30 +24,30 @@ serverAPI: (finished)
 - server.js         // configure our application and create routes
 - routes.js //this is included in the server.js file (would separate if app was bigger and for production)
 
+
+clientConsumer: (in progress)
+-
+- app/
+----- index.html				//the homepage
+----- css/
+---------- bootstrap.min.css   	//bootstrap framework
+---------- custom.css	       	//custom CSS
+----- js/
+---------- angular.min.js		//angular framework
+---------- app.js				//angular module and controller
+- refference_material/			//personal reference for RESTful Api handling through JQuery and Restangular
+
+
+Notes:
+-
+This is the final version of the project merging both the client application and the server. The client app is hosted by the server on its homepage while RESTful calls are being initiated through the Client GUI and handled by the server. Running is done by running the server through the CLI:
+
 CLI Instructions:
 - cd to directory of package.json file and run $ npm install
 - run with node '$ node server.js' (or optional to run app through nodemon instead of node '$ sudo npm install -g nodemon' and '$ nodemon server.js')
 
 
-clientConsumer: (in progress)
--
-AngularJS client (still in progress)
-- Angular/
------ css/
----------- bootstrap.min.css   	//bootstrap framework
----------- custom.css	       	//custom CSS
------ js/
----------- angular.min.js	//angular framework
----------- app.js		//angular module and controller
------ index.html		//the homepage
-- JQuery/     		//independent work in progress
-- Restangular/       	//independent work in progress
-
-
-Final-MEAN-App: (in progress)
--
-This is the final version of the project merging both the client application and the server. The client app is hosted by the server on its homepage while RESTful calls are being initiated and handled. Running is the same as the CLI instruction for the server (described above)
-To do: Will create a final .sh script for linux to automatically start up both MongoDB and the server.
+NOTE: To do: Will create a final .sh script for linux to automatically start up both MongoDB and the server.
 
 
 Current Bugs:
