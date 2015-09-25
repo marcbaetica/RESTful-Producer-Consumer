@@ -1,14 +1,14 @@
 # RESTful Producer-Consumer Apps
 
-Our API will:
+Our API does the following:
 
-- Handle CRUD for an item (we’re going to use superheroes)
-- Have a standard URL (http://example.com/api/superheroes and http://example.com/api/superheroes/:superhero_id)
-- Use the proper HTTP verbs to make it RESTful (GET, POST, PUT, and DELETE)
-- Return JSON data (since we are using node)
-- Log all requests to the console
+- Handles CRUD for an item (we’re going to use superheroes)
+- Has a standard RESTful URL (http://example.com/api/superheroes and http://example.com/api/superheroes/:superhero_id)
+- Uses the proper HTTP verbs to make it RESTful (GET, POST, PUT, and DELETE)
+- Returns JSON data (since we are using node)
+- Logs all requests to the console
 
-This API will in turn be consumed by a client GUI running AngularJS which will be provided or any other method the user wishes to entail (eg: POSTMAN, CURL, or their own browser application capable of consuming RESTful services)
+This API in turn is consumed by a client GUI running the provided AngularJS or by any other method the user wishes to entail (eg: POSTMAN, CURL, or their own browser application capable of consuming RESTful services)
 
 # FOLDER STRUCTURE:
 
@@ -17,8 +17,8 @@ serverAPI: (finished)
 -
 - app/						//location of MongoDB model (built through MongooseJS)
 							//files for the client app (can be deployed separately instead of being hosted by the server)
------ models/
----------- superheroes.js  // our superheroes model
+- --- models/
+- -------- superheroes.js  // our superheroes model
 - node_modules/     // created by npm. holds our dependencies/packages
 - package.json      // define all our node app and dependencies
 - server.js         // configure our application and create routes
@@ -28,13 +28,13 @@ serverAPI: (finished)
 clientConsumer: (in progress)
 -
 - app/
------ index.html				//the homepage
------ css/
----------- bootstrap.min.css   	//bootstrap framework
----------- custom.css	       	//custom CSS
------ js/
----------- angular.min.js		//angular framework
----------- app.js				//angular module and controller
+- --- index.html				//the homepage
+- --- css/
+- -------- bootstrap.min.css   	//bootstrap framework
+- -------- custom.css	       	//custom CSS
+- --- js/
+- -------- angular.min.js		//angular framework
+- -------- app.js				//angular module and controller
 - refference_material/			//personal reference for RESTful Api handling through JQuery and Restangular
 
 
